@@ -1,0 +1,16 @@
+
+public class rdpf {
+
+	public static void main(String[] args) {
+		try {
+			PDDocument document = PDDocument.load(new File(directoryPath));
+			if (!document.isEncrypted()) {
+				PDFTextStripper stripper = new PDFTextStripper();
+				pdftext = stripper.getText(document);
+			}
+		} catch (IOException e) {
+			System.out.println("Can not Read Pdf : "+e.getMessage());
+		}
+	}
+
+}
